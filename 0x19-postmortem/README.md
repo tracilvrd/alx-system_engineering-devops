@@ -1,32 +1,26 @@
-Summary:
-Our e-commerce platform experienced a significant outage on September 5, 2021, from 2:00 PM to 6:00 PM (GMT), affecting the majority of our customers. During this time, users were unable to add items to their cart, make payments, or access the website. The outage was caused by a server crash, rendering the website inaccessible.
+Issue Summary:
+On 5th September 2021, from 2:00 PM to 6:00 PM (GMT), our e-commerce platform faced an outage, which impacted almost all of our customers. The users were unable to add any items to their cart, make payments or even access the website. The outage was caused by a server crash, which resulted in the website's inaccessibility.
 
 Timeline:
+- 2:00 PM: The issue was first detected by the monitoring alert system. 
+- 2:05 PM: An engineer was notified about the issue and began investigating it.
+- 2:10 PM: The engineer pieced together the puzzle and found out that the server hosting the website had crashed.
+- 2:15 PM: The engineer attempted to fix the issue by restarting the server, but it didn't work.
+- 2:20 PM: The engineer escalated the issue to the senior engineer as they found out that the cause was something different than expected.
+- 2:25 PM: The senior engineer noticed the overloaded server caused by a surge in traffic, which resulted in the server crashing.
+- 2:30 PM: Both engineers began analyzing server logs and identified several attempts for SQL injection as well as overloading of server resources that caused the crash.
+- 2:45 PM: The platform development was notified about the issue as the cause was identified as a security vulnerability, which freed the SQL injection.
+- 3:00 PM: The platform development team conducted a code review of the e-commerce platform and identified vulnerabilities that were overlooked. They commenced fixing it.
+- 4:00 PM: The issue was resolved, and the website was back online, and the servers were operating normally.
 
-2:00 PM: Our monitoring alert system detected the issue.
-2:05 PM: An engineer received a notification and began investigating.
-2:10 PM: The engineer discovered that the server hosting the website had crashed.
-2:15 PM: Attempting to resolve the issue, the engineer restarted the server without success.
-2:20 PM: Recognizing a different cause than initially expected, the engineer escalated the issue to a senior engineer.
-2:25 PM: The senior engineer identified an overloaded server due to a surge in traffic as the cause of the crash.
-2:30 PM: Both engineers analyzed server logs and found evidence of attempted SQL injections and resource overloading.
-2:45 PM: The platform development team was informed of a security vulnerability related to SQL injection.
-3:00 PM: The platform development team conducted a code review, addressing overlooked vulnerabilities and initiating fixes.
-4:00 PM: The issue was resolved, and the website and servers were operational again.
-
-Root Cause and Resolution:
-The outage resulted from a surge in traffic and attempted SQL injections, overwhelming the servers and causing the crash. The development team identified a security flaw in the code that enabled SQL injection. They deployed a security patch to eliminate the vulnerability, resolving the issue and restoring the platform.
+Root cause and Resolution:
+As mentioned, the root cause of the outage was caused by a surge in traffic and several attempted SQL injections. The servers were overloaded, and it caused the server to crash. The development team identified that there was a security flaw in the code that allowed the SQL injection. The team deployed a security patch that eliminated the vulnerability, and this allowed the team to fix the issue and get the platform back online.
 
 Corrective and Preventative Measures:
-To prevent future outages, we implemented the following measures:
-1. Strengthened input validation functions, database connection functions, and error handling in the e-commerce platform.
-2. Deployed a Web Application Firewall for protection against SQL injections, DDoS attacks, and other web-based threats.
-3. Improved monitoring system to detect unusual traffic spikes and high resource usage, notifying engineers promptly.
-4. Conducted a comprehensive review of the code, platform, and software components to identify weaknesses and vulnerabilities for patching, minimizing the risk of similar errors.
+To prevent a similar outage from happening in the future, here are some of the measures that were taken:
+- Strengthening of the input validation functions, database connection functions, and error handling in the e-commerce platform.
+- Deploying a Web Application Firewall to protect against SQL injections, DDoS, and other web-based attacks.
+- Improved monitoring system implementation that can notify the engineers in case of any unusual traffic spikes or high resource usage.
+- Conducting a thorough review of the code, platform as well as the software and its components to identify any weaknesses and vulnerabilities for patches to avoid similar errors in the future. 
 
-In conclusion, the outage was caused by a server crash resulting from a security flaw enabling attempted SQL injections and overwhelming the servers with increased traffic. We resolved the issue by deploying a patch and addressing the vulnerability. Additionally, we implemented measures such as a web application firewall and strengthened various functions to prevent similar outages in the future. Our team remains vigilant in monitoring the system to ensure optimal functionality.
-
-
-
-
-
+In summary, the server crash and eventual outage were caused by a security flaw in the website's code that resulted in an attempted SQL injection and an overloaded server, crashing with surge traffic. The issue was resolved by deploying a patch to the vulnerability and fixing the cause of the vulnerability. We have also taken several measures to avoid similar outages in the future by implementing a web application firewall as well as strengthening our input validation, database connection, and error handling functions. We will continue to monitor our system closely to ensure that everything is functioning correctly.
